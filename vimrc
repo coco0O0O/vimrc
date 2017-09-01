@@ -59,7 +59,7 @@ nnoremap <silent> <C-Tab> :tabnext<CR><CR>
 if strlen(system('ver|find "6.1"'))>1
     set guifont=Microsoft\ YaHei\ Mono:h15
 else
-    set guifont=Consolas:h14
+    set guifont=Consolas:h16
 end
 colorscheme desert
 "gui setting end
