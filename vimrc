@@ -56,7 +56,11 @@ nnoremap <silent> <C-Tab> :tabnext<CR><CR>
 "set guifont=微软雅黑:h15
 "set guifont=YaHei\ Consolas\ Hybrid:h14
 "set guifont=Consolas:h14
-set guifont=Microsoft\ YaHei\ Mono:h15
+if strlen(system('ver|find "6.1"'))>1
+    set guifont=Microsoft\ YaHei\ Mono:h15
+else
+    set guifont=Consolas:h14
+end
 colorscheme desert
 "gui setting end
 
