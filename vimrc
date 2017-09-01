@@ -37,12 +37,10 @@ source $VIMRUNTIME/menu.vim
 language messages zh_CN.UTF-8
 "set encoding end
 
-"adding short cut for plugin taglist begin
-nnoremap <silent> <F2> :TlistToggle<CR><CR>
-let Tlist_Sort_Type = "name"
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Show_One_File = 1
-"adding short cut for plugin taglist end
+"adding short cut for plugin tagbar begin
+nnoremap <silent> <F2> :TagbarToggle<CR><CR>
+let g:tagbar_left = 1
+"adding short cut for plugin tagbar end
 "
 "adding short cut for plugin NERDTree begin
 nnoremap <silent> <F1> :NERDTreeToggle<CR><CR>
@@ -55,9 +53,10 @@ nnoremap <silent> <C-Tab> :tabnext<CR><CR>
 "adding short cut for tab shift
 
 "gui setting begin
-"set guifont=微软雅黑:h16
+"set guifont=微软雅黑:h15
 "set guifont=YaHei\ Consolas\ Hybrid:h14
-set guifont=Consolas:h16
+"set guifont=Consolas:h14
+set guifont=Microsoft\ YaHei\ Mono:h15
 colorscheme desert
 "gui setting end
 
