@@ -1,4 +1,4 @@
-"windows system default setting begin
+﻿"windows system default setting begin
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
@@ -53,9 +53,6 @@ nnoremap <silent> <C-Tab> :tabnext<CR><CR>
 "adding short cut for tab shift
 
 "gui setting begin
-"set guifont=微软雅黑:h15
-"set guifont=YaHei\ Consolas\ Hybrid:h14
-"set guifont=Consolas:h14
 if strlen(system('ver|find "6.1"'))>1
     set guifont=Microsoft\ YaHei\ Mono:h15
 else
@@ -73,15 +70,32 @@ Plugin 'coco0O0O/vim-monokai'
 Plugin 'coco0O0O/tagbar'
 Plugin 'coco0O0O/matlab.vim'
 Plugin 'coco0O0O/vim-matchit'
-Plugin 'coco0O0O/neocomplcache.vim'
+"Plugin 'coco0O0O/neocomplcache.vim'
 Plugin 'coco0O0O/nerdtree'
 "Plugin 'coco0O0O/vim-nerdtree-tabs'
-"Plugin 'coco0O0O/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'coco0O0O/asyncrun.vim'
+Plugin 'python-mode/python-mode'
+Plugin 'davidhalter/jedi-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "vundle setting end
 "
-let g:neocomplcache_enable_at_startup = 1
+map <F5> :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+    exec "w"
+    if &filetype=='python'
+        exec "AsyncRun ipython % "
+        exec "copen"
+    endif
+endfunc
+map <F6> :call DebugRunGcc()<CR>
+func! DebugRunGcc()
+    exec "w"
+    if &filetype=='python'
+        exec "!ipython % --pdb"
+    endif
+endfunc
 
 set diffexpr=MyDiff()
 function MyDiff()
