@@ -42,6 +42,11 @@ nnoremap <silent> <F2> :TagbarToggle<CR><CR>
 let g:tagbar_left = 1
 "adding short cut for plugin tagbar end
 "
+" Use neocomplete.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+"
 "adding short cut for plugin NERDTree begin
 nnoremap <silent> <F1> :NERDTreeToggle<CR><CR>
 let g:NERDTreeDirArrowExpandable = '►'
@@ -70,10 +75,10 @@ Plugin 'coco0O0O/vim-monokai'
 Plugin 'coco0O0O/tagbar'
 Plugin 'coco0O0O/matlab.vim'
 Plugin 'coco0O0O/vim-matchit'
-"Plugin 'coco0O0O/neocomplcache.vim'
+Plugin 'coco0O0O/neocomplcache.vim'
 Plugin 'coco0O0O/nerdtree'
 "Plugin 'coco0O0O/vim-nerdtree-tabs'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'coco0O0O/asyncrun.vim'
 Plugin 'python-mode/python-mode'
 Plugin 'davidhalter/jedi-vim'
